@@ -18,6 +18,8 @@
   --warn-soft: #fbf0dc;
   --danger: #d6453d;
   --danger-soft: #fce9e7;
+  --focus: #b8996f;
+  --focus-soft: rgba(184, 153, 111, 0.25);
 
   --radius-sm: 8px;
   --radius: 12px;
@@ -39,6 +41,7 @@ body {
   font-size: 15px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  text-align: left;
 }
 
 h1,
@@ -57,7 +60,7 @@ textarea {
 
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--focus);
   outline-offset: 2px;
 }
 
@@ -69,7 +72,7 @@ a:focus-visible {
   display: flex;
   align-items: center;
   gap: 24px;
-  padding: 14px 32px;
+  padding: 14px 48px;
   background: rgba(249, 247, 242, 0.88);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
@@ -118,8 +121,8 @@ a:focus-visible {
 }
 
 .search:focus-within {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 4px var(--accent-soft);
+  border-color: var(--focus);
+  box-shadow: 0 0 0 4px var(--focus-soft);
 }
 
 .search input {
@@ -209,9 +212,8 @@ a:focus-visible {
 /* ---------- Layout ---------- */
 .layout {
   display: grid;
-  grid-template-columns: 250px 1fr;
-  max-width: 1280px;
-  margin: 0 auto;
+  grid-template-columns: 270px 1fr;
+  width: 100%;
   min-height: calc(100vh - 69px);
 }
 
@@ -222,7 +224,7 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding: 32px 24px;
+  padding: 32px 24px 32px 48px;
 }
 
 .sidebar-title {
@@ -324,12 +326,13 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding: 40px 32px 64px 16px;
+  padding: 40px 48px 64px 24px;
   min-width: 0;
 }
 
 .hero {
-  max-width: 640px;
+  max-width: 720px;
+  text-align: left;
 }
 
 .hero-date {
@@ -341,6 +344,7 @@ a:focus-visible {
 }
 
 .hero h1 {
+  margin: 0;
   font-size: clamp(28px, 3.4vw, 40px);
   font-weight: 700;
   line-height: 1.15;
@@ -517,7 +521,8 @@ a:focus-visible {
 }
 
 .task-desc {
-  margin-top: 4px;
+  margin-top: 6px;
+  text-align: left;
   color: var(--muted);
   overflow-wrap: anywhere;
 }
@@ -683,9 +688,9 @@ a:focus-visible {
 
 .field input:focus,
 .field textarea:focus {
-  border-color: var(--accent);
+  border-color: var(--focus);
   background: #fff;
-  box-shadow: 0 0 0 4px var(--accent-soft);
+  box-shadow: 0 0 0 4px var(--focus-soft);
 }
 
 .field textarea {
@@ -743,15 +748,10 @@ a:focus-visible {
   padding: 12px 14px;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-left: 4px solid var(--success);
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
   pointer-events: auto;
   animation: slide-in 0.25s ease;
-}
-
-.toast-error {
-  border-left-color: var(--danger);
 }
 
 .toast-icon {
